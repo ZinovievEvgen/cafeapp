@@ -32,4 +32,44 @@ public class CoffeeType {
 
     public CoffeeType() {
     }
+
+    public String getNameOfCoffeeType() {
+        return nameOfCoffeeType;
+    }
+
+    public void setNameOfCoffeeType(String nameOfCoffeeType) {
+        this.nameOfCoffeeType = nameOfCoffeeType;
+    }
+
+    public long getIdOfCoffeeType() {
+        return idOfCoffeeType;
+    }
+
+    public void setIdOfCoffeeType(long idOfCoffeeType) {
+        this.idOfCoffeeType = idOfCoffeeType;
+    }
+
+    public double getPriceOfCoffeeType() {
+        return priceOfCoffeeType;
+    }
+
+    public void setPriceOfCoffeeType(double priceOfCoffeeType) {
+        this.priceOfCoffeeType = priceOfCoffeeType;
+    }
+
+    public boolean isEnabledCoffeeType() {
+        return enabledCoffeeType;
+    }
+
+    public void setEnabledCoffeeType(boolean enabledCoffeeType) {
+        this.enabledCoffeeType = enabledCoffeeType;
+    }
+
+    public List<CoffeeOrderItem> getCoffeeOrderItemByCoffeeType() {
+        return coffeeOrderItemByCoffeeType;
+    }
+
+    public void setCoffeeOrderItemByCoffeeType(List<CoffeeOrderItem> coffeeOrderItemByCoffeeType) {
+        this.coffeeOrderItemByCoffeeType = coffeeOrderItemByCoffeeType;
+    }
 }
