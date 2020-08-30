@@ -4,12 +4,14 @@ import back.dao_abst.CoffeeOrderDao;
 import back.models.CoffeeOrder;
 import back.service_abst.CoffeeOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 /**
  * Created by SaidHazzarD on 23.08.2020.
  */
+@Service
 public class CoffeeOrderServiceImpl implements CoffeeOrderService {
 
     @Autowired

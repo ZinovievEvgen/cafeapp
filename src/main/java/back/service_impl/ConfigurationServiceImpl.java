@@ -4,12 +4,14 @@ import back.dao_abst.ConfigurationDao;
 import back.models.Configuration;
 import back.service_abst.ConfigurationService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 /**
  * Created by SaidHazzarD on 23.08.2020.
  */
+@Service
 public class ConfigurationServiceImpl implements ConfigurationService {
 
     @Autowired

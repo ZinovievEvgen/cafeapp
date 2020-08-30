@@ -4,6 +4,7 @@ import back.dao_abst.UserDao;
 import back.models.User;
 import back.service_abst.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
@@ -11,6 +12,7 @@ import java.util.Optional;
 /**
  * Created by SaidHazzarD on 23.08.2020.
  */
+@Service
 public class UserServiceImpl implements UserService {
 
     @Autowired
