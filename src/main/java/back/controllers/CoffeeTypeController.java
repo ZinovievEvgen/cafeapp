@@ -5,6 +5,8 @@ import back.service_abst.CoffeeTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  * Created by SaidHazzarD on 30.08.2020.
  */
@@ -19,6 +21,11 @@ public class CoffeeTypeController {
     @GetMapping("/get/{id}")
     public CoffeeType getCoffeeTypeById(@PathVariable long id) {
         return coffeeTypeService.getCoffeeTypeById(id);
+    }
+
+    @GetMapping("/allCoffeeTypes")
+    public List<CoffeeType> getAllCoffeeTypeBy() {
+        return coffeeTypeService.getAllCoffeeType();
     }
 
     @PostMapping("/create")
