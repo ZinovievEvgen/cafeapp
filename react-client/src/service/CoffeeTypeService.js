@@ -1,11 +1,11 @@
 import axios from 'axios'
 
-const url = 'http://localhost:8080/api/coffeeType';
+const url = 'http://localhost:8088/api/coffeeType/';
 
 class CoffeeTypeService {
 
     getCoffeeTypes() {
-        return axios.get(url);
+        return axios.get(url + 'allCoffeeTypes');
     }
 }
 
