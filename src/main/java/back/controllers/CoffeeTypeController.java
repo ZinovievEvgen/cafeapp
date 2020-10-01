@@ -2,6 +2,7 @@ package back.controllers;
 
 import back.models.CoffeeType;
 import back.service_abst.CoffeeTypeService;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -29,7 +30,7 @@ public class CoffeeTypeController {
         return coffeeTypeService.getAllCoffeeType();
     }
 
-    @PostMapping("/create")
+    @PostMapping(value = "/create")
     public void createCoffeeTypeById(@RequestBody CoffeeType coffeeType) {
         coffeeTypeService.addCoffeeType(coffeeType);
     }

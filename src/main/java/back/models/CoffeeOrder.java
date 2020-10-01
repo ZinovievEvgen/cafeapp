@@ -29,14 +29,14 @@ public class CoffeeOrder {
     @Column(name = "costOfCoffeeOrder")
     private double costOfCoffeeOrder;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    /*@ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "userByCoffeeOrderId")
     @JsonBackReference
     private User userOfCoffeeOrder;
 
     @OneToMany(mappedBy = "coffeeOrderByCoffeeOrderItem", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JsonManagedReference
-    private List<CoffeeOrderItem> coffeeOrderItemByCoffeeOrder;
+    private List<CoffeeOrderItem> coffeeOrderItemByCoffeeOrder;*/
 
     public CoffeeOrder() {
     }

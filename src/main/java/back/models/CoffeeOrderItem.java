@@ -15,7 +15,7 @@ public class CoffeeOrderItem {
     @Column(name = "idOfCoffeeOrderItem")
     private long idOfCoffeeOrderItem;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    /*@ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "coffeeTypeId")
     @JsonBackReference
     private CoffeeType coffeeTypeByOrderItem;
@@ -23,7 +23,7 @@ public class CoffeeOrderItem {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "coffeeOrderId")
     @JsonBackReference
-    private CoffeeOrder coffeeOrderByCoffeeOrderItem;
+    private CoffeeOrder coffeeOrderByCoffeeOrderItem;*/
 
     @Column(name = "quantityOfCupCoffee")
     private long quantityOfCupCoffee;
