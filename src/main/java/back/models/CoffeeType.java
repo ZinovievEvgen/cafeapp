@@ -23,11 +23,8 @@ public class CoffeeType {
     @Column(name = "priceOfCoffeeType")
     private double priceOfCoffeeType;
 
-    @Column(name = "enabledCoffeeType")
-    private boolean enabledCoffeeType;
 
     @OneToMany(mappedBy = "coffeeTypeByOrderItem", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JsonManagedReference
     private List<CoffeeOrderItem> coffeeOrderItemByCoffeeType;
 
     public CoffeeType() {
@@ -57,19 +54,38 @@ public class CoffeeType {
         this.priceOfCoffeeType = priceOfCoffeeType;
     }
 
-    public boolean isEnabledCoffeeType() {
-        return enabledCoffeeType;
-    }
-
-    public void setEnabledCoffeeType(boolean enabledCoffeeType) {
-        this.enabledCoffeeType = enabledCoffeeType;
-    }
-
     public List<CoffeeOrderItem> getCoffeeOrderItemByCoffeeType() {
         return coffeeOrderItemByCoffeeType;
     }
 
     public void setCoffeeOrderItemByCoffeeType(List<CoffeeOrderItem> coffeeOrderItemByCoffeeType) {
         this.coffeeOrderItemByCoffeeType = coffeeOrderItemByCoffeeType;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        CoffeeType that = (CoffeeType) o;
+
+        if (idOfCoffeeType != that.idOfCoffeeType) return false;
+        if (Double.compare(that.priceOfCoffeeType, priceOfCoffeeType) != 0) return false;
+        if (nameOfCoffeeType != null ? !nameOfCoffeeType.equals(that.nameOfCoffeeType) : that.nameOfCoffeeType != null)
+            return false;
+        return coffeeOrderItemByCoffeeType != null ? coffeeOrderItemByCoffeeType.equals(that.coffeeOrderItemByCoffeeType) : that.coffeeOrderItemByCoffeeType == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result;
+        long temp;
+        result = (int) (idOfCoffeeType ^ (idOfCoffeeType >>> 32));
+        result = 31 * result + (nameOfCoffeeType != null ? nameOfCoffeeType.hashCode() : 0);
+        temp = Double.doubleToLongBits(priceOfCoffeeType);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        result = 31 * result + (coffeeOrderItemByCoffeeType != null ? coffeeOrderItemByCoffeeType.hashCode() : 0);
+        return result;
     }
 }

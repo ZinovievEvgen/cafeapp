@@ -3,6 +3,7 @@ package back.controllers;
 import back.models.CoffeeType;
 import back.service_abst.CoffeeTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,7 +13,7 @@ import java.util.List;
  */
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping("/api/coffeeType")
+@RequestMapping(value = "/api/coffeeTypes")
 public class CoffeeTypeController {
 
     @Autowired

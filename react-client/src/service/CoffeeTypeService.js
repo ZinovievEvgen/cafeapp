@@ -1,27 +1,34 @@
-import axios from 'axios'
+import http from "../http-common";
 
-const url = 'http://localhost:8088/api/coffeeType/';
 
 class CoffeeTypeService {
 
     getCoffeeTypes() {
-        return axios.get(url + 'allCoffeeTypes');
+        return http.get("/coffeeTypes/allCoffeeTypes");
     }
 
-    createCoffeeType(coffeeType){
-        return axios.post(url + 'create', coffeeType);
+    createCoffeeType(coffeeType) {
+        return http.post("/coffeeTypes/create", coffeeType);
     }
 
-    getCoffeeTypeById(coffeeTypeId){
-        return axios.get(url + 'get/' + coffeeTypeId);
+    getCoffeeTypeById(coffeeTypeId) {
+        return http.get(`/coffeeTypes/get/${coffeeTypeId}`);
     }
 
-    updateCoffeeType(coffeeType, coffeeTypeId){
-        return axios.put(url + '/update/' + coffeeTypeId, coffeeType);
+    deleteCoffeeType(coffeeTypeId) {
+        return http.delete(`/coffeeTypes/delete/${coffeeTypeId}`);
     }
 
-    deleteCoffeeType(coffeeTypeId){
-        return axios.delete(url + '/delete/' + coffeeTypeId);
+    updateCoffeeType(coffeeTypeId, coffeeType) {
+        return http.put(`/coffeeTypes/update/${coffeeTypeId}`, coffeeType);
+    }
+
+    deleteAll() {
+        return http.delete(`/coffeeTypes/deleteAll`);
+    }
+
+    findByName(name) {
+        return http.get(`/coffeeTypesFind?name=${name}`);
     }
 }
 

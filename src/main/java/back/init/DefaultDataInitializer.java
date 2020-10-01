@@ -17,7 +17,6 @@ public class DefaultDataInitializer {
         CoffeeType latte = new CoffeeType();
         latte.setNameOfCoffeeType("Latte");
         latte.setPriceOfCoffeeType(100);
-        latte.setEnabledCoffeeType(true);
         coffeeTypeService.addCoffeeType(latte);
     }
 }
