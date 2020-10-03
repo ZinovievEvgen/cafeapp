@@ -8,10 +8,8 @@ import org.springframework.stereotype.Service;
 
 import javax.websocket.server.ServerEndpoint;
 import java.util.List;
+import java.util.Optional;
 
-/**
- * Created by SaidHazzarD on 23.08.2020.
- */
 @Service
 public class RoleServiceImpl implements RoleService {
 
@@ -41,5 +39,10 @@ public class RoleServiceImpl implements RoleService {
     @Override
     public void updateRole(Role role) {
         roleDao.update(role);
+    }
+
+    @Override
+    public Optional<Role> findByName(String name) {
+        return roleDao.findByName(name);
     }
 }

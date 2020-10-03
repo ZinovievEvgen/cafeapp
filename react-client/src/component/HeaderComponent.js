@@ -19,7 +19,7 @@ class HeaderComponent extends Component {
                                 <a href="/" className="navbar-brand">CoffeeChangeApp</a>
                             </li>
                             <li className="nav-item">
-                                <a href="/coffeeTypes" className="navbar-brand">CoffeeType</a>
+                                <a href="/coffeeTypes" className="navbar-brand">Тип кофе</a>
                             </li>
                         </div>
                     </nav>

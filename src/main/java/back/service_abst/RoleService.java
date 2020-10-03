@@ -3,10 +3,8 @@ package back.service_abst;
 import back.models.Role;
 
 import java.util.List;
+import java.util.Optional;
 
-/**
- * Created by SaidHazzarD on 20.08.2020.
- */
 public interface RoleService {
 
     Role getRoleById(Long id);
@@ -18,5 +16,7 @@ public interface RoleService {
     void deleteRoleById(Long id);
 
     void updateRole(Role role);
+
+    Optional<Role> findByName(String name);
 
 }

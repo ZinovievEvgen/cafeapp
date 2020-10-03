@@ -160,7 +160,7 @@ class CoffeeTypeComponent extends React.Component {
                                 {currentCoffeeType.priceOfCoffeeType}
                             </div>
                             <button onClick={ () => this.editCoffeeType(currentCoffeeType.idOfCoffeeType)}
-                                    className="btn btn-info">Изменить
+                                    className="btn btn-sm btn-info">Изменить
                             </button>
                         </div>
                     ) : (
