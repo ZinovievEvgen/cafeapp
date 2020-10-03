@@ -166,7 +166,7 @@ class CoffeeTypeComponent extends React.Component {
                     ) : (
                         <div>
                             <br />
-                            <p>Please click on a Tutorial...</p>
+                            <p>Выберите необходимый тип кофе...</p>
                         </div>
                     )}
                 </div>
