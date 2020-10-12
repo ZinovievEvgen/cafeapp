@@ -9,6 +9,9 @@ import UpdateCoffeeTypeComponent from "./component/coffeeType/UpdateCoffeeTypeCo
 import UserListComponent from "./component/users/UserListComponent";
 import CreateUserComponent from "./component/users/CreateUserComponent";
 import UpdateUserComponent from "./component/users/UpdateUserComponent";
+import RoleListComponent from "./component/roles/RoleListComponent";
+import CreateRoleComponent from "./component/roles/CreateRoleComponent";
+import UpdateRoleComponent from "./component/roles/UpdateRoleComponent";
 import "./App.css";
 
 function App() {
@@ -25,6 +28,9 @@ function App() {
                             <Route path = "/users" component = {UserListComponent}></Route>
                             <Route path = "/addUser" component = {CreateUserComponent}></Route>
                             <Route path = "/updateUser/:id" component = {UpdateUserComponent}></Route>
+                            <Route path = "/roles" component = {RoleListComponent}></Route>
+                            <Route path = "/addRole" component = {CreateRoleComponent}></Route>
+                            <Route path = "/updateRole/:id" component = {UpdateRoleComponent}></Route>
                         </Switch>
                     </div>
                     <FooterComponent />

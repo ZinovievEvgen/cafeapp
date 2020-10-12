@@ -106,7 +106,7 @@ class GlobalComponent extends Component {
             <div>
                 <Tabs activeTab={{id: "tab1"}}>
                     <Tabs.Tab id="tab1" title="Информация">
-                        <div style={{ padding: 10 }}>Инфомрация о проекте</div>
+                        <div style={{ padding: 10 }}>Информация о проекте</div>
                     </Tabs.Tab>
 
                     <Tabs.Tab id="tab2" title="Регистрация">

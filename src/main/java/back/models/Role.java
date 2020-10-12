@@ -12,11 +12,12 @@ import java.util.List;
 @Table(name = "roles")
 public class Role {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "idOfRole")
+    private Long idOfRole;
 
     @Column(name = "nameOfRole")
-    private String name;
+    private String nameOfRole;
 
     @ManyToMany(fetch = FetchType.LAZY, targetEntity = User.class)
     @JoinTable(name = "userRoles",
@@ -28,20 +29,20 @@ public class Role {
     public Role() {
     }
 
-    public Integer getId() {
-        return id;
+    public Long getId() {
+        return idOfRole;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setId(Long idOfRole) {
+        this.idOfRole = idOfRole;
     }
 
     public String getName() {
-        return name;
+        return nameOfRole;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String nameOfRole) {
+        this.nameOfRole = nameOfRole;
     }
 
     public List<User> getUsers() {
