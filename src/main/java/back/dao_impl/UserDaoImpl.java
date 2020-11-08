@@ -4,8 +4,8 @@ import back.dao_abst.UserDao;
 import back.models.User;
 import org.hibernate.Session;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.transaction.Transactional;
 import java.util.Optional;
 
 /**
@@ -19,7 +19,7 @@ public class UserDaoImpl extends AbstractDao<Long, User> implements UserDao {
         String query = "select c from User c where c.loginOfUser = :loginOfUser";
         return entityManager.unwrap(Session.class)
                 .createQuery(query, User.class)
-                .setParameter("loginOfUser",loginOfUser)
+                .setParameter("loginOfUser", loginOfUser)
                 .setFirstResult(0)
                 .setMaxResults(1)
                 .uniqueResultOptional();
@@ -30,7 +30,7 @@ public class UserDaoImpl extends AbstractDao<Long, User> implements UserDao {
         String query = "select c from User c where c.emailOfUser = :emailOfUser";
         return entityManager.unwrap(Session.class)
                 .createQuery(query, User.class)
-                .setParameter("emailOfUser",emailOfUser)
+                .setParameter("emailOfUser", emailOfUser)
                 .setFirstResult(0)
                 .setMaxResults(1)
                 .uniqueResultOptional();

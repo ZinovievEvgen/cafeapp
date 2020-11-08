@@ -12,6 +12,7 @@ import UpdateUserComponent from "./component/users/UpdateUserComponent";
 import RoleListComponent from "./component/roles/RoleListComponent";
 import CreateRoleComponent from "./component/roles/CreateRoleComponent";
 import UpdateRoleComponent from "./component/roles/UpdateRoleComponent";
+import OrderListComponent from "./component/orders/OrderListComponent";
 import "./App.css";
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
                             <Route path = "/roles" component = {RoleListComponent}></Route>
                             <Route path = "/addRole" component = {CreateRoleComponent}></Route>
                             <Route path = "/updateRole/:id" component = {UpdateRoleComponent}></Route>
+                            <Route path = "/orders" component = {OrderListComponent}></Route>
                         </Switch>
                     </div>
                     <FooterComponent />

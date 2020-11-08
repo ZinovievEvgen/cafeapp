@@ -1,6 +1,7 @@
 package back.service_abst;
 
 import back.models.CoffeeOrder;
+import back.models.User;
 
 import java.util.List;
 
@@ -18,4 +19,6 @@ public interface CoffeeOrderService {
     void deleteCoffeeOrderById(Long id);
 
     void updateCoffeeOrder(CoffeeOrder coffeeOrder);
+
+    CoffeeOrder getCoffeeOrderByUser(User user);
 }

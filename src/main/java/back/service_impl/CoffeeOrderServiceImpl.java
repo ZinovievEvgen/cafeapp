@@ -2,6 +2,7 @@ package back.service_impl;
 
 import back.dao_abst.CoffeeOrderDao;
 import back.models.CoffeeOrder;
+import back.models.User;
 import back.service_abst.CoffeeOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -40,5 +41,10 @@ public class CoffeeOrderServiceImpl implements CoffeeOrderService {
     @Override
     public void updateCoffeeOrder(CoffeeOrder coffeeOrder) {
         coffeeOrderDao.update(coffeeOrder);
+    }
+
+    @Override
+    public CoffeeOrder getCoffeeOrderByUser(User user) {
+        return null;
     }
 }

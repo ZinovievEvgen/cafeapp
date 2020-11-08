@@ -1,10 +1,10 @@
 package back.dao_impl;
 
 import org.hibernate.Session;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.transaction.Transactional;
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
@@ -13,7 +13,7 @@ import java.util.List;
  * Created by SaidHazzarD on 20.08.2020.
  */
 @Transactional
-public class AbstractDao<PK extends Serializable, T> {
+public abstract class AbstractDao<PK extends Serializable, T> {
     @PersistenceContext
     EntityManager entityManager;
 

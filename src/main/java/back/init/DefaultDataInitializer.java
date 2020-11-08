@@ -1,11 +1,7 @@
 package back.init;
 
-import back.models.CoffeeType;
-import back.models.Role;
-import back.models.User;
-import back.service_abst.CoffeeTypeService;
-import back.service_abst.RoleService;
-import back.service_abst.UserService;
+import back.models.*;
+import back.service_abst.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
@@ -20,6 +16,10 @@ public class DefaultDataInitializer {
     private RoleService roleService;
     @Autowired
     private UserService userService;
+    @Autowired
+    private CoffeeOrderService coffeeOrderService;
+    @Autowired
+    private CoffeeOrderItemService coffeeOrderItemService;
 
     private void init() throws Exception {
         CoffeeType latte = new CoffeeType();
@@ -34,6 +34,10 @@ public class DefaultDataInitializer {
         Role roleUser = new Role();
         roleUser.setName("USER");
         roleService.addRole(roleUser);
+
+        CoffeeOrder coffeeOrder1 = new CoffeeOrder();
+        coffeeOrder1.setNameOfOrder("заказ1");
+        coffeeOrderService.addCoffeeOrder(coffeeOrder1);
 
         /*User admin = new User();
         admin.setLogin("admin");
@@ -53,5 +57,7 @@ public class DefaultDataInitializer {
         user.setRoles(userRoles);
 
         userService.addUser(user);*/
+
+
     }
 }

@@ -1,8 +1,11 @@
 package back.models;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -31,6 +34,10 @@ public class User {
     @Email
     @Column(name = "emailOfUser")
     private String emailOfUser;
+
+    @OneToMany(mappedBy = "userForOrder", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonManagedReference
+    private List<CoffeeOrder> orderList;
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "userRoles",
@@ -95,5 +102,13 @@ public class User {
 
     public void setSurnameOfUser(String surnameOfUser) {
         this.surnameOfUser = surnameOfUser;
+    }
+
+    public List<CoffeeOrder> getOrderList() {
+        return orderList;
+    }
+
+    public void setOrderList(List<CoffeeOrder> orderList) {
+        this.orderList = orderList;
     }
 }

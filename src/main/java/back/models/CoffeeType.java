@@ -19,6 +19,9 @@ public class CoffeeType {
     @Column(name = "priceOfCoffeeType")
     private double priceOfCoffeeType;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "coffeeOrderForCoffeeTypeId")
+    private CoffeeOrderItem coffeeOrderItemForCoffeeType;
 
     public CoffeeType() {
     }
@@ -45,5 +48,13 @@ public class CoffeeType {
 
     public void setPriceOfCoffeeType(double priceOfCoffeeType) {
         this.priceOfCoffeeType = priceOfCoffeeType;
+    }
+
+    public CoffeeOrderItem getCoffeeOrderItemForCoffeeType() {
+        return coffeeOrderItemForCoffeeType;
+    }
+
+    public void setCoffeeOrderItemForCoffeeType(CoffeeOrderItem coffeeOrderItemForCoffeeType) {
+        this.coffeeOrderItemForCoffeeType = coffeeOrderItemForCoffeeType;
     }
 }
